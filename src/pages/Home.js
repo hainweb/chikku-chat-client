@@ -44,7 +44,7 @@ const Home = () => {
       auth: {
         token: token,
       },
-      transports: ['websocket', 'polling'],
+  //    transports: ['websocket', 'polling'],
     });
 
     socketConnection.on('connect', () => {
