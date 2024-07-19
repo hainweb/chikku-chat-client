@@ -38,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log('Token:', token); // Log the token
+    console.log('Token:', token); // Log the token for debugging
 
     const socketConnection = io(process.env.REACT_APP_BACKEND_URL, {
       auth: {
@@ -63,7 +63,9 @@ const Home = () => {
     dispatch(setSocketConnection(socketConnection));
 
     return () => {
-      socketConnection.disconnect();
+      if (socketConnection) {
+        socketConnection.disconnect();
+      }
     };
   }, [dispatch]);
 
