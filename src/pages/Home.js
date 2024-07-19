@@ -40,10 +40,7 @@ const Home = () => {
 
 
   // added 
-  const socket = io('https://darsh-chat-server.onrender.com', {
-  transports: ['websocket'],
-  withCredentials: true,
-});
+ 
 
 socket.on('connect', () => {
   console.log('Connected to WebSocket server');
