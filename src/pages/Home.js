@@ -64,7 +64,7 @@ const Home = () => {
 
   return () => {
       if (socketConnection) {
-        socketConnection.connect();
+        socketConnection.disconnect();
       }
     };
   }, [dispatch]);  
