@@ -38,6 +38,21 @@ const Home = () => {
     fetchUserDetails()
   },[])
 
+
+  // added 
+  const socket = io('wss://darsh-chat-server.onrender.com', {
+  transports: ['websocket'],
+  withCredentials: true,
+});
+
+socket.on('connect', () => {
+  console.log('Connected to WebSocket server');
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from WebSocket server');
+});
+
   /***socket connection */
   useEffect(()=>{
     const socketConnection = io(process.env.REACT_APP_BACKEND_URL,{
