@@ -19,6 +19,7 @@ const Home = () => {
         const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`
         const response = await axios({
           url : URL,
+          transports: ['websocket'],
           withCredentials : true
         })
 
