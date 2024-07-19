@@ -44,6 +44,7 @@ const Home = () => {
       auth : {
         token : localStorage.getItem('token')
       },
+       transports: ['websocket', 'polling'],
     })
 
     socketConnection.on('onlineUser',(data)=>{
@@ -54,8 +55,12 @@ const Home = () => {
     dispatch(setSocketConnection(socketConnection))
 
     return ()=>{
-      socketConnection.disconnect()
-    }
+     if (socketConnection) {
+       
+        console.log('Disconnecting WebSocket');
+        socketConnection.disconnect();
+      }
+    };
   },[])
 
 
