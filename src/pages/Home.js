@@ -62,12 +62,13 @@ const Home = () => {
 
     dispatch(setSocketConnection(socketConnection));
 
-  return () => {
+    return () => {
       if (socketConnection) {
+        console.log('Disconnecting WebSocket');
         socketConnection.disconnect();
       }
     };
-  }, [dispatch]);  
+  }, [dispatch]);
 
   const basePath = location.pathname === '/';
   return (
@@ -91,3 +92,4 @@ const Home = () => {
 };
 
 export default Home;
+
