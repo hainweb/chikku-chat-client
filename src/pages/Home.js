@@ -65,7 +65,7 @@ const Home = () => {
     return () => {
       if (socketConnection) {
         console.log('Disconnecting WebSocket');
-       // socketConnection.disconnect();
+        socketConnection.disconnect();
       }
     };
   }, [dispatch]);
