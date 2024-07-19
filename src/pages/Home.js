@@ -43,8 +43,8 @@ const Home = () => {
     const socketConnection = io(process.env.REACT_APP_BACKEND_URL, {
       auth: {
         token: token,
-      }
-  //    transports: ['websocket', 'polling'],
+      },
+     transports: ['websocket', 'polling'],
     });
 
     socketConnection.on('connect', () => {
