@@ -40,7 +40,7 @@ const Home = () => {
 
 
   // added 
-  const socket = io('wss://darsh-chat-server.onrender.com', {
+  const socket = io('https://darsh-chat-server.onrender.com', {
   transports: ['websocket'],
   withCredentials: true,
 });
