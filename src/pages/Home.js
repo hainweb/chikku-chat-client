@@ -44,6 +44,7 @@ const Home = () => {
       auth : {
         token : localStorage.getItem('token')
       },
+      transports: ['websocket', 'polling'],
     })
 
     socketConnection.on('onlineUser',(data)=>{
