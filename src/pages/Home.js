@@ -64,6 +64,7 @@ const Home = () => {
 
     return () => {
       if (socketConnection) {
+        pingTimeout: 60000
         console.log('Disconnecting WebSocket');
         socketConnection.disconnect();
       }
