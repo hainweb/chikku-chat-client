@@ -62,12 +62,12 @@ const Home = () => {
 
     dispatch(setSocketConnection(socketConnection));
 
-    return () => {
+  /*  return () => {
       if (socketConnection) {
         socketConnection.disconnect();
       }
     };
-  }, [dispatch]);
+  }, [dispatch]);  */
 
   const basePath = location.pathname === '/';
   return (
