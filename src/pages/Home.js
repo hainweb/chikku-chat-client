@@ -40,7 +40,15 @@ const Home = () => {
 
 
   // added 
- 
+
+  const socket = io('https://your-backend-url.onrender.com', {
+  transports: ['websocket', 'polling'],
+  withCredentials: true
+});
+
+socket.on('connect', () => {
+  console.log('Connected to WebSocket server');
+});
 
 
 
