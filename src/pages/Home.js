@@ -41,7 +41,8 @@ const Home = () => {
 
   // added 
 
-  const socket = io('https://your-backend-url.onrender.com', {
+  
+  const socket = io('https://darsh-chat-server.onrender.com', {
   transports: ['websocket', 'polling'],
   withCredentials: true
 });
